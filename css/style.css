@@ -18,17 +18,15 @@ body {
   height: 25px;
   line-height: 25px;
   text-align: center;
-  position: absolute;
-  right: 15px;
+  float: right;
 }
-
 #close:hover {
   cursor: pointer;
   transform: rotate(360deg);
   transition: all 0.6s ease-in-out;
 }
 
-/* For the info box. */
+/* For the Info box. */
 #information {
   font-size: 13px;
   margin: auto;
@@ -37,15 +35,13 @@ body {
   right: 0;
   top: 10px;
   width: 70%;
-  background-color: rgb(255 255 255 / 85%);
-  box-shadow: 0 0 10px dimgray;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 10px DimGray;
   color: #111;
-  z-index: 9999;
+  z-index: 7;
   line-height: 150%;
   padding: 10px;
   border-radius: 10px;
-  overflow-y: scroll;
-  max-height: 95%;
   display: none;
 }
 
@@ -54,206 +50,74 @@ h1 {
 }
 
 a {
-  color: #068;
-  text-decoration: none;
+  color: #0078a8;
 }
 
-a:hover {
-  color: #038;
-}
-
-/* Legend */
-.legend-row {
+/* legend */
+.legendRow {
   display: table-cell;
   max-height: 15px;
   position: relative;
   top: -3px;
 }
-
-.first-cell {
+.firstCell {
   display: table-cell;
   width: 15px;
   border-radius: 5px;
   border: solid 1px #cdcdcddd;
   margin-right: 5px;
 }
-
-.second-cell {
+.secondCell {
   display: table-cell;
   padding-left: 5px;
 }
-
-.third-cell {
+.thirdCell {
   display: table-cell;
   padding-left: 10px;
 }
 
-/* Marker properties */
+/* marker properties */
 .marker {
   border-radius: 40% 5%;
   border-style: solid;
   border-width: 2px;
   padding: 2px;
-  box-shadow: 4px 4px 4px dimgray;
+  box-shadow: 4px 4px 4px DimGray;
 }
-
 .marker:hover {
-  border-color: navajowhite;
+  border-color: NavajoWhite;
   padding: 3px;
 }
 
-/* Categorie properties */
-/* stylelint-disable-next-line selector-class-pattern */
+/* categorie properties */
 .vegan_only {
-  background: #050;
-  border-color: #172;
-  color: white;
+  background: #005500;
+  border-color: #117722;
 }
-
-/* stylelint-disable-next-line selector-class-pattern */
 .vegetarian_only {
-  background: #181;
-  border-color: #181;
-  color: white;
+  background: #118811;
+  border-color: #118811;
 }
-
-/* stylelint-disable-next-line selector-class-pattern */
 .vegan_friendly {
-  background: #00bc00;
-  border-color: #00bc00;
+  background: #00BC00;
+  border-color: #00BC00;
 }
-
-/* stylelint-disable-next-line selector-class-pattern */
 .vegan_limited {
-  background: #afa;
-  border-color: seagreen;
+  background: #AAFFAA;
+  border-color: SeaGreen;
 }
-
-/* stylelint-disable-next-line selector-class-pattern */
 .vegetarian_friendly {
   background: #fefefe;
-  border-color: darkgreen;
+  border-color: DarkGreen;
 }
 
-/* Layer button: Adjust the size to the other buttons. */
-.leaflet-touch .leaflet-control-layers-toggle {
-  width: 30px;
-  height: 30px;
+/* Adjust the size of the layer button to the other buttons. */
+.leaflet-control-layers-toggle {
+  width: 26px !important;
+  height: 26px !important;
   background-size: 80%;
 }
-
-/* Tooltip: Mimic Firefox's tooltip style */
-.leaflet-tooltip {
-  background: rgb(0 0 0 / 85%);
-  color: #fff;
-  padding: 1em;
-  border: none;
-  border-radius: 5px;
-}
-
-/* Tooltip: Hide the pointing triangle */
-.leaflet-tooltip-top::before,
-.leaflet-tooltip-bottom::before,
-.leaflet-tooltip-left::before,
-.leaflet-tooltip-right::before {
-  border-color: transparent;
-}
-
-/* PopupTitle */
-.map-popup-title {
-  font-size: medium;
-  text-align: center;
-}
-
-/* Emojis and content in the popup in one line */
-.popupflex-container {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.popupflex-container > div {
-  min-width: 2em;
-  padding-bottom: 7px;
-}
-
-.leaflet-popup-content {
-  margin-top: 45px;
-}
-
-.popup-category {
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-  border-radius: 12px 12px 0 0;
-  padding: 12px 0;
-  margin-left: -21px;
-  width: 100%;
-  text-align: center;
-}
-
-/* The i symbol in the information button */
-.info-button {
-  height: 60%;
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 14'%3E%3Cdefs/%3E%3Cpath d='M24.3-5.9H53v270H24.3zM1.5 6.5h-1v-.2l3.4-1v6.2c0 .6.1 1 .3 1.2l1.3.3v.2h-5V13c.7 0 1.2-.1 1.4-.3.2-.2.3-.6.3-1.2v-4c0-.4 0-.6-.2-.8l-.5-.2z'/%3E%3Ccircle cx='2.9' cy='2.3' r='1.3'/%3E%3C/svg%3E");
-  vertical-align: middle;
-  display: inline-block;
-}
-
-/* Spinner shown while loading the markers */
-#spinner {
-  margin: auto;
-  padding: 7px;
-  display: block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border-width: 4px;
-  border-style: solid;
-  border-color: #c0c0c0;
-  border-top-color: #434343;
-  animation: 1.5s linear infinite spinner;
-}
-
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Open state circles in the popup box */
-.open-state-circle {
-  height: 0.8em;
-  width: 0.8em;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 0.5em;
-}
-
-.open {
-  background-color: green;
-}
-
-.opens-soon {
-  background-color: yellow;
-}
-
-.closes-soon {
-  background-color: orange;
-}
-
-.closed {
-  background-color: red;
-}
-
-/* Firefox workaround for https://github.com/Leaflet/Leaflet/issues/4686 */
-.leaflet-fade-anim .leaflet-tile {
-  will-change: auto !important;
-}
-
-.leaflet-zoom-anim .leaflet-zoom-animated {
-  will-change: auto !important;
+.leaflet-touch .leaflet-control-layers-toggle {
+  width: 30px !important;
+  height: 30px !important;
 }
